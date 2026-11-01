@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const rawURL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const rawURL =
+  import.meta.env.VITE_API_URL ||
+  (typeof window !== 'undefined' ? `${window.location.origin}/api` : 'http://localhost:5000/api');
 if (!import.meta.env.VITE_API_URL) {
   console.warn('VITE_API_URL is not set. Defaulting to http://localhost:5000/api. Copy .env.example to .env to configure.');
 }

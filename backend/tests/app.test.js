@@ -15,7 +15,7 @@ test.before(() => {
 test.after(() => server.close());
 
 test('GET / returns API welcome and health link', async () => {
-  const res = await fetch(`${base}/`);
+  const res = await fetch(`${base}/`, { headers: { Accept: 'application/json' } });
   assert.equal(res.status, 200);
   const json = await res.json();
   assert.equal(json.success, true);
