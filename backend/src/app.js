@@ -19,8 +19,11 @@ export function createApp(allowedOrigins = []) {
   app.use(
     cors({
       origin(origin, cb) {
-        // Allow non-browser clients (curl, Postman) and whitelisted origins (or wildcard)
-        if (!origin || allowedOrigins.includes('*') || allowedOrigins.includes(origin)) return cb(null, true);
+        // Allow non-browser clients, wildcard, whitelisted origins, and Vercel/Render domains
+        const isAllowedDomain = origin && (origin.endsWith('.vercel.app') || origin.endsWith('.onrender.com'));
+        if (!origin || allowedOrigins.includes('*') || allowedOrigins.includes(origin) || isAllowedDomain) {
+          return cb(null, true);
+        }
         cb(new HttpError(403, 'Origin not allowed by CORS'));
       },
     })

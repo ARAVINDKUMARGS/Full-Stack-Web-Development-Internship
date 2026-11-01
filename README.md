@@ -9,8 +9,10 @@ A production-grade, full-stack contact management application built with the MER
 ## Repository & Live Links
 
 - **GitHub Repository:** `https://github.com/ARAVINDKUMARGS/Full-Stack-Web-Development-Internship`
-- **Live Application (Frontend & API):** `https://full-stack-web-development-internship-3.onrender.com`
+- **Live Frontend (Vercel):** `https://full-stack-web-development-internsh.vercel.app`
+- **Live Backend API (Render):** `https://full-stack-web-development-internship-3.onrender.com/api`
 - **Live Backend API Health:** `https://full-stack-web-development-internship-3.onrender.com/api/health`
+- **Live Unified Web App (Render):** `https://full-stack-web-development-internship-3.onrender.com`
 
 ---
 
